@@ -1,0 +1,5 @@
+{
+    "packagePath" : "./",
+    "variableNamingConvention" : "camelCase",
+    "apiPackage" : "LycheeAPI"
+}
