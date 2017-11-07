@@ -42,18 +42,16 @@ class ObjectSerializer
     /**
      * Serialize data
      *
-     * @param mixed  $data   the data to serialize
-     * @param string $type   the SwaggerType of the data
-     * @param string $format the format of the Swagger type of the data
+     * @param mixed $data the data to serialize
      *
      * @return string|object serialized form of $data
      */
-    public static function sanitizeForSerialization($data, $type = null, $format = null)
+    public static function sanitizeForSerialization($data)
     {
         if (is_scalar($data) || null === $data) {
             return $data;
         } elseif ($data instanceof \DateTime) {
-            return ($format === 'date') ? $data->format('Y-m-d') : $data->format(\DateTime::ATOM);
+            return $data->format(\DateTime::ATOM);
         } elseif (is_array($data)) {
             foreach ($data as $property => $value) {
                 $data[$property] = self::sanitizeForSerialization($value);
@@ -61,17 +59,10 @@ class ObjectSerializer
             return $data;
         } elseif (is_object($data)) {
             $values = [];
-            $formats = $data::swaggerFormats();
-            foreach ($data::swaggerTypes() as $property => $swaggerType) {
+            foreach (array_keys($data::swaggerTypes()) as $property) {
                 $getter = $data::getters()[$property];
-                $value = $data->$getter();
-                if ($value !== null && method_exists($swaggerType, 'getAllowableEnumValues')
-                    && !in_array($value, $swaggerType::getAllowableEnumValues())) {
-                    $imploded = implode("', '", $swaggerType::getAllowableEnumValues());
-                    throw new \InvalidArgumentException("Invalid value for enum '$swaggerType', must be one of: '$imploded'");
-                }
-                if ($value !== null) {
-                    $values[$data::attributeMap()[$property]] = self::sanitizeForSerialization($value, $swaggerType, $formats[$property]);
+                if ($data->$getter() !== null) {
+                    $values[$data::attributeMap()[$property]] = self::sanitizeForSerialization($data->$getter());
                 }
             }
             return (object)$values;
@@ -88,7 +79,7 @@ class ObjectSerializer
      *
      * @return string the sanitized filename
      */
-    public static function sanitizeFilename($filename)
+    public function sanitizeFilename($filename)
     {
         if (preg_match("/.*[\/\\\\](.*)$/", $filename, $match)) {
             return $match[1];
@@ -267,7 +258,7 @@ class ObjectSerializer
             // determine file name
             if (array_key_exists('Content-Disposition', $httpHeaders) &&
                 preg_match('/inline; filename=[\'"]?([^\'"\s]+)[\'"]?$/i', $httpHeaders['Content-Disposition'], $match)) {
-                $filename = Configuration::getDefaultConfiguration()->getTempFolderPath() . self::sanitizeFilename($match[1]);
+                $filename = Configuration::getDefaultConfiguration()->getTempFolderPath() . sanitizeFilename($match[1]);
             } else {
                 $filename = tempnam(Configuration::getDefaultConfiguration()->getTempFolderPath(), '');
             }
@@ -278,12 +269,6 @@ class ObjectSerializer
             }
 
             return $deserialized;
-        } elseif (method_exists($class, 'getAllowableEnumValues')) {
-            if (!in_array($data, $class::getAllowableEnumValues())) {
-                $imploded = implode("', '", $class::getAllowableEnumValues());
-                throw new \InvalidArgumentException("Invalid value for enum '$class', must be one of: '$imploded'");
-            }
-            return $data;
         } else {
             // If a discriminator is defined and points to a valid subclass, use it.
             $discriminator = $class::DISCRIMINATOR;

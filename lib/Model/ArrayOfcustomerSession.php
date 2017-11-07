@@ -57,22 +57,9 @@ class ArrayOfcustomerSession implements ArrayAccess
         
     ];
 
-    /**
-      * Array of property to format mappings. Used for (de)serialization
-      * @var string[]
-      */
-    protected static $swaggerFormats = [
-        
-    ];
-
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
-    }
-
-    public static function swaggerFormats()
-    {
-        return self::$swaggerFormats;
     }
 
     /**

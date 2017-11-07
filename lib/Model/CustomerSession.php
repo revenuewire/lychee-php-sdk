@@ -71,36 +71,9 @@ class CustomerSession implements ArrayAccess
         'subIds' => '\Swagger\Client\Model\CustomerSessionSubIds'
     ];
 
-    /**
-      * Array of property to format mappings. Used for (de)serialization
-      * @var string[]
-      */
-    protected static $swaggerFormats = [
-        'id' => null,
-        'sessionId' => null,
-        'ip' => null,
-        'created' => null,
-        'modified' => null,
-        'expiredAt' => null,
-        'merchantId' => null,
-        'partnerId' => null,
-        'affiliateInfoId' => null,
-        'productId' => null,
-        'destinationId' => null,
-        'networkId' => null,
-        'tid' => null,
-        'httpReferer' => null,
-        'subIds' => null
-    ];
-
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
-    }
-
-    public static function swaggerFormats()
-    {
-        return self::$swaggerFormats;
     }
 
     /**
