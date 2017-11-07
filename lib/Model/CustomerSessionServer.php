@@ -1,6 +1,6 @@
 <?php
 /**
- * CustomerSessions
+ * CustomerSessionServer
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ namespace Swagger\Client\Model;
 use \ArrayAccess;
 
 /**
- * CustomerSessions Class Doc Comment
+ * CustomerSessionServer Class Doc Comment
  *
  * @category    Class
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class CustomerSessions implements ArrayAccess
+class CustomerSessionServer implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -47,14 +47,17 @@ class CustomerSessions implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'customerSessions';
+    protected static $swaggerModelName = 'customerSession_server';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       * @var string[]
       */
     protected static $swaggerTypes = [
-        
+        'hTTPUSERAGENT' => 'string',
+        'hTTPREFERER' => 'string',
+        'hTTPACCEPTLANGUAGE' => 'string',
+        'qUERYSTRING' => 'map[string,string]'
     ];
 
     public static function swaggerTypes()
@@ -67,7 +70,10 @@ class CustomerSessions implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        
+        'hTTPUSERAGENT' => 'HTTP_USER_AGENT',
+        'hTTPREFERER' => 'HTTP_REFERER',
+        'hTTPACCEPTLANGUAGE' => 'HTTP_ACCEPT_LANGUAGE',
+        'qUERYSTRING' => 'QUERY_STRING'
     ];
 
 
@@ -76,7 +82,10 @@ class CustomerSessions implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        
+        'hTTPUSERAGENT' => 'setHTTPUSERAGENT',
+        'hTTPREFERER' => 'setHTTPREFERER',
+        'hTTPACCEPTLANGUAGE' => 'setHTTPACCEPTLANGUAGE',
+        'qUERYSTRING' => 'setQUERYSTRING'
     ];
 
 
@@ -85,7 +94,10 @@ class CustomerSessions implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        
+        'hTTPUSERAGENT' => 'getHTTPUSERAGENT',
+        'hTTPREFERER' => 'getHTTPREFERER',
+        'hTTPACCEPTLANGUAGE' => 'getHTTPACCEPTLANGUAGE',
+        'qUERYSTRING' => 'getQUERYSTRING'
     ];
 
     public static function attributeMap()
@@ -119,6 +131,10 @@ class CustomerSessions implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
+        $this->container['hTTPUSERAGENT'] = isset($data['hTTPUSERAGENT']) ? $data['hTTPUSERAGENT'] : null;
+        $this->container['hTTPREFERER'] = isset($data['hTTPREFERER']) ? $data['hTTPREFERER'] : null;
+        $this->container['hTTPACCEPTLANGUAGE'] = isset($data['hTTPACCEPTLANGUAGE']) ? $data['hTTPACCEPTLANGUAGE'] : null;
+        $this->container['qUERYSTRING'] = isset($data['qUERYSTRING']) ? $data['qUERYSTRING'] : null;
     }
 
     /**
@@ -128,7 +144,7 @@ class CustomerSessions implements ArrayAccess
      */
     public function listInvalidProperties()
     {
-        $invalid_properties = parent::listInvalidProperties();
+        $invalid_properties = [];
 
         return $invalid_properties;
     }
@@ -141,13 +157,94 @@ class CustomerSessions implements ArrayAccess
      */
     public function valid()
     {
-        if (!parent::valid()) {
-            return false;
-        }
 
         return true;
     }
 
+
+    /**
+     * Gets hTTPUSERAGENT
+     * @return string
+     */
+    public function getHTTPUSERAGENT()
+    {
+        return $this->container['hTTPUSERAGENT'];
+    }
+
+    /**
+     * Sets hTTPUSERAGENT
+     * @param string $hTTPUSERAGENT
+     * @return $this
+     */
+    public function setHTTPUSERAGENT($hTTPUSERAGENT)
+    {
+        $this->container['hTTPUSERAGENT'] = $hTTPUSERAGENT;
+
+        return $this;
+    }
+
+    /**
+     * Gets hTTPREFERER
+     * @return string
+     */
+    public function getHTTPREFERER()
+    {
+        return $this->container['hTTPREFERER'];
+    }
+
+    /**
+     * Sets hTTPREFERER
+     * @param string $hTTPREFERER
+     * @return $this
+     */
+    public function setHTTPREFERER($hTTPREFERER)
+    {
+        $this->container['hTTPREFERER'] = $hTTPREFERER;
+
+        return $this;
+    }
+
+    /**
+     * Gets hTTPACCEPTLANGUAGE
+     * @return string
+     */
+    public function getHTTPACCEPTLANGUAGE()
+    {
+        return $this->container['hTTPACCEPTLANGUAGE'];
+    }
+
+    /**
+     * Sets hTTPACCEPTLANGUAGE
+     * @param string $hTTPACCEPTLANGUAGE
+     * @return $this
+     */
+    public function setHTTPACCEPTLANGUAGE($hTTPACCEPTLANGUAGE)
+    {
+        $this->container['hTTPACCEPTLANGUAGE'] = $hTTPACCEPTLANGUAGE;
+
+        return $this;
+    }
+
+    /**
+     * Gets qUERYSTRING
+     * @return map[string,string]
+     */
+    public function getQUERYSTRING()
+    {
+        return $this->container['qUERYSTRING'];
+    }
+
+    /**
+     * Sets qUERYSTRING
+     * @param map[string,string] $qUERYSTRING
+     * @return $this
+     */
+    public function setQUERYSTRING($qUERYSTRING)
+    {
+        $this->container['qUERYSTRING'] = $qUERYSTRING;
+
+        return $this;
+    }
     /**
      * Returns true if offset exists. False otherwise.
      * @param  integer $offset Offset

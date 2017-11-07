@@ -14,7 +14,8 @@ Name | Type | Description | Notes
 **affiliateInfoId** | **float** |  | [optional] 
 **productId** | **float** |  | [optional] 
 **destinationId** | **float** |  | [optional] 
-**data** | **string** |  | [optional] 
+**networkId** | **float** |  | [optional] 
+**server** | [**\Swagger\Client\Model\CustomerSessionServer**](CustomerSessionServer.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
