@@ -15,7 +15,9 @@ Name | Type | Description | Notes
 **productId** | **float** |  | [optional] 
 **destinationId** | **float** |  | [optional] 
 **networkId** | **float** |  | [optional] 
-**server** | [**\Swagger\Client\Model\CustomerSessionServer**](CustomerSessionServer.md) |  | [optional] 
+**tid** | **string** |  | [optional] 
+**httpReferer** | **string** |  | [optional] 
+**subIds** | [**\Swagger\Client\Model\CustomerSessionSubIds**](CustomerSessionSubIds.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
