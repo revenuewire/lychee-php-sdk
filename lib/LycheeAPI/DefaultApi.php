@@ -189,7 +189,7 @@ class DefaultApi
      * @param string $partnerId  (optional)
      * @param string $merchantId  (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\ArrayOfcustomerSession
+     * @return \Swagger\Client\Model\CustomerSession[]
      */
     public function getSessionsByIp($ip, $affiliateInfoId = null, $destinationId = null, $productId = null, $partnerId = null, $merchantId = null)
     {
@@ -209,7 +209,7 @@ class DefaultApi
      * @param string $partnerId  (optional)
      * @param string $merchantId  (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\ArrayOfcustomerSession, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\CustomerSession[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getSessionsByIpWithHttpInfo($ip, $affiliateInfoId = null, $destinationId = null, $productId = null, $partnerId = null, $merchantId = null)
     {
@@ -280,15 +280,15 @@ class DefaultApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\ArrayOfcustomerSession',
+                '\Swagger\Client\Model\CustomerSession[]',
                 '/sessions/ip/{ip}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\ArrayOfcustomerSession', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\CustomerSession[]', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ArrayOfcustomerSession', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\CustomerSession[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -309,7 +309,7 @@ class DefaultApi
      * @param string $partnerId  (optional)
      * @param string $merchantId  (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\ArrayOfcustomerSession
+     * @return \Swagger\Client\Model\CustomerSession[]
      */
     public function getSessionsBySessionId($sessionId, $affiliateInfoId = null, $destinationId = null, $productId = null, $partnerId = null, $merchantId = null)
     {
@@ -329,7 +329,7 @@ class DefaultApi
      * @param string $partnerId  (optional)
      * @param string $merchantId  (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\ArrayOfcustomerSession, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\CustomerSession[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getSessionsBySessionIdWithHttpInfo($sessionId, $affiliateInfoId = null, $destinationId = null, $productId = null, $partnerId = null, $merchantId = null)
     {
@@ -400,15 +400,15 @@ class DefaultApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\ArrayOfcustomerSession',
+                '\Swagger\Client\Model\CustomerSession[]',
                 '/sessions/session/{sessionId}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\ArrayOfcustomerSession', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\CustomerSession[]', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\ArrayOfcustomerSession', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\CustomerSession[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

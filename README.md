@@ -87,7 +87,6 @@ Class | Method | HTTP request | Description
 
 ## Documentation For Models
 
- - [ArrayOfcustomerSession](docs/Model/ArrayOfcustomerSession.md)
  - [CustomerSession](docs/Model/CustomerSession.md)
  - [CustomerSessionSubIds](docs/Model/CustomerSessionSubIds.md)
 

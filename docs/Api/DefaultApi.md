@@ -58,7 +58,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getSessionsByIp**
-> \Swagger\Client\Model\ArrayOfcustomerSession getSessionsByIp($ip, $affiliateInfoId, $destinationId, $productId, $partnerId, $merchantId)
+> \Swagger\Client\Model\CustomerSession[] getSessionsByIp($ip, $affiliateInfoId, $destinationId, $productId, $partnerId, $merchantId)
 
 
 
@@ -102,7 +102,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\ArrayOfcustomerSession**](../Model/ArrayOfcustomerSession.md)
+[**\Swagger\Client\Model\CustomerSession[]**](../Model/CustomerSession.md)
 
 ### Authorization
 
@@ -116,7 +116,7 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **getSessionsBySessionId**
-> \Swagger\Client\Model\ArrayOfcustomerSession getSessionsBySessionId($sessionId, $affiliateInfoId, $destinationId, $productId, $partnerId, $merchantId)
+> \Swagger\Client\Model\CustomerSession[] getSessionsBySessionId($sessionId, $affiliateInfoId, $destinationId, $productId, $partnerId, $merchantId)
 
 
 
@@ -160,7 +160,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**\Swagger\Client\Model\ArrayOfcustomerSession**](../Model/ArrayOfcustomerSession.md)
+[**\Swagger\Client\Model\CustomerSession[]**](../Model/CustomerSession.md)
 
 ### Authorization
 
