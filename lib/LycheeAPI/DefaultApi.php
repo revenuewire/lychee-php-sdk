@@ -90,8 +90,6 @@ class DefaultApi
     /**
      * Operation getSession
      *
-     * 
-     *
      * @param string $id  (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\CustomerSession
@@ -104,8 +102,6 @@ class DefaultApi
 
     /**
      * Operation getSessionWithHttpInfo
-     *
-     * 
      *
      * @param string $id  (required)
      * @throws \Swagger\Client\ApiException on non-2xx response
@@ -137,10 +133,7 @@ class DefaultApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -180,8 +173,6 @@ class DefaultApi
     /**
      * Operation getSessionsByIp
      *
-     * 
-     *
      * @param string $ip  (required)
      * @param string $affiliateInfoId  (optional)
      * @param string $destinationId  (optional)
@@ -189,7 +180,7 @@ class DefaultApi
      * @param string $partnerId  (optional)
      * @param string $merchantId  (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\CustomerSessions
+     * @return \Swagger\Client\Model\CustomerSession[]
      */
     public function getSessionsByIp($ip, $affiliateInfoId = null, $destinationId = null, $productId = null, $partnerId = null, $merchantId = null)
     {
@@ -200,8 +191,6 @@ class DefaultApi
     /**
      * Operation getSessionsByIpWithHttpInfo
      *
-     * 
-     *
      * @param string $ip  (required)
      * @param string $affiliateInfoId  (optional)
      * @param string $destinationId  (optional)
@@ -209,7 +198,7 @@ class DefaultApi
      * @param string $partnerId  (optional)
      * @param string $merchantId  (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\CustomerSessions, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\CustomerSession[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getSessionsByIpWithHttpInfo($ip, $affiliateInfoId = null, $destinationId = null, $productId = null, $partnerId = null, $merchantId = null)
     {
@@ -257,10 +246,7 @@ class DefaultApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -280,15 +266,15 @@ class DefaultApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\CustomerSessions',
+                '\Swagger\Client\Model\CustomerSession[]',
                 '/sessions/ip/{ip}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\CustomerSessions', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\CustomerSession[]', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\CustomerSessions', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\CustomerSession[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }
@@ -300,8 +286,6 @@ class DefaultApi
     /**
      * Operation getSessionsBySessionId
      *
-     * 
-     *
      * @param string $sessionId  (required)
      * @param string $affiliateInfoId  (optional)
      * @param string $destinationId  (optional)
@@ -309,7 +293,7 @@ class DefaultApi
      * @param string $partnerId  (optional)
      * @param string $merchantId  (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\CustomerSessions
+     * @return \Swagger\Client\Model\CustomerSession[]
      */
     public function getSessionsBySessionId($sessionId, $affiliateInfoId = null, $destinationId = null, $productId = null, $partnerId = null, $merchantId = null)
     {
@@ -320,8 +304,6 @@ class DefaultApi
     /**
      * Operation getSessionsBySessionIdWithHttpInfo
      *
-     * 
-     *
      * @param string $sessionId  (required)
      * @param string $affiliateInfoId  (optional)
      * @param string $destinationId  (optional)
@@ -329,7 +311,7 @@ class DefaultApi
      * @param string $partnerId  (optional)
      * @param string $merchantId  (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\CustomerSessions, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \Swagger\Client\Model\CustomerSession[], HTTP status code, HTTP response headers (array of strings)
      */
     public function getSessionsBySessionIdWithHttpInfo($sessionId, $affiliateInfoId = null, $destinationId = null, $productId = null, $partnerId = null, $merchantId = null)
     {
@@ -377,10 +359,7 @@ class DefaultApi
                 $resourcePath
             );
         }
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
 
-        
         // for model (json/xml)
         if (isset($_tempBody)) {
             $httpBody = $_tempBody; // $_tempBody is the method argument, if present
@@ -400,15 +379,15 @@ class DefaultApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\CustomerSessions',
+                '\Swagger\Client\Model\CustomerSession[]',
                 '/sessions/session/{sessionId}'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\CustomerSessions', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\CustomerSession[]', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\CustomerSessions', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\CustomerSession[]', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

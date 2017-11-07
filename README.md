@@ -89,7 +89,6 @@ Class | Method | HTTP request | Description
 
  - [CustomerSession](docs/Model/CustomerSession.md)
  - [CustomerSessionServer](docs/Model/CustomerSessionServer.md)
- - [CustomerSessions](docs/Model/CustomerSessions.md)
 
 
 ## Documentation For Authorization

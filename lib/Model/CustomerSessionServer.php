@@ -60,9 +60,25 @@ class CustomerSessionServer implements ArrayAccess
         'qUERYSTRING' => 'map[string,string]'
     ];
 
+    /**
+      * Array of property to format mappings. Used for (de)serialization
+      * @var string[]
+      */
+    protected static $swaggerFormats = [
+        'hTTPUSERAGENT' => null,
+        'hTTPREFERER' => null,
+        'hTTPACCEPTLANGUAGE' => null,
+        'qUERYSTRING' => null
+    ];
+
     public static function swaggerTypes()
     {
         return self::$swaggerTypes;
+    }
+
+    public static function swaggerFormats()
+    {
+        return self::$swaggerFormats;
     }
 
     /**
