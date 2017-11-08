@@ -1,0 +1,12 @@
+# CustomerSessionCampaign
+
+## Properties
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**agentUserId** | **string** |  | [optional] 
+**campaignId** | **string** |  | [optional] 
+**agentId** | **string** |  | [optional] 
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

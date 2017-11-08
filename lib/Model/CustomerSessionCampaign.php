@@ -1,6 +1,6 @@
 <?php
 /**
- * CustomerSessionSubIds
+ * CustomerSessionCampaign
  *
  * PHP version 5
  *
@@ -32,14 +32,14 @@ namespace Swagger\Client\Model;
 use \ArrayAccess;
 
 /**
- * CustomerSessionSubIds Class Doc Comment
+ * CustomerSessionCampaign Class Doc Comment
  *
  * @category    Class
  * @package     Swagger\Client
  * @author      Swagger Codegen team
  * @link        https://github.com/swagger-api/swagger-codegen
  */
-class CustomerSessionSubIds implements ArrayAccess
+class CustomerSessionCampaign implements ArrayAccess
 {
     const DISCRIMINATOR = null;
 
@@ -47,17 +47,16 @@ class CustomerSessionSubIds implements ArrayAccess
       * The original name of the model.
       * @var string
       */
-    protected static $swaggerModelName = 'customerSession_subIds';
+    protected static $swaggerModelName = 'customerSession_campaign';
 
     /**
       * Array of property to type mappings. Used for (de)serialization
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'subId' => 'string',
-        'subId2' => 'string',
-        'subId3' => 'string',
-        'clickId' => 'string'
+        'agentUserId' => 'string',
+        'campaignId' => 'string',
+        'agentId' => 'string'
     ];
 
     public static function swaggerTypes()
@@ -70,10 +69,9 @@ class CustomerSessionSubIds implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'subId' => 'subId',
-        'subId2' => 'subId2',
-        'subId3' => 'subId3',
-        'clickId' => 'clickId'
+        'agentUserId' => 'agentUserId',
+        'campaignId' => 'campaignId',
+        'agentId' => 'agentId'
     ];
 
 
@@ -82,10 +80,9 @@ class CustomerSessionSubIds implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'subId' => 'setSubId',
-        'subId2' => 'setSubId2',
-        'subId3' => 'setSubId3',
-        'clickId' => 'setClickId'
+        'agentUserId' => 'setAgentUserId',
+        'campaignId' => 'setCampaignId',
+        'agentId' => 'setAgentId'
     ];
 
 
@@ -94,10 +91,9 @@ class CustomerSessionSubIds implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'subId' => 'getSubId',
-        'subId2' => 'getSubId2',
-        'subId3' => 'getSubId3',
-        'clickId' => 'getClickId'
+        'agentUserId' => 'getAgentUserId',
+        'campaignId' => 'getCampaignId',
+        'agentId' => 'getAgentId'
     ];
 
     public static function attributeMap()
@@ -131,10 +127,9 @@ class CustomerSessionSubIds implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['subId'] = isset($data['subId']) ? $data['subId'] : null;
-        $this->container['subId2'] = isset($data['subId2']) ? $data['subId2'] : null;
-        $this->container['subId3'] = isset($data['subId3']) ? $data['subId3'] : null;
-        $this->container['clickId'] = isset($data['clickId']) ? $data['clickId'] : null;
+        $this->container['agentUserId'] = isset($data['agentUserId']) ? $data['agentUserId'] : null;
+        $this->container['campaignId'] = isset($data['campaignId']) ? $data['campaignId'] : null;
+        $this->container['agentId'] = isset($data['agentId']) ? $data['agentId'] : null;
     }
 
     /**
@@ -163,85 +158,64 @@ class CustomerSessionSubIds implements ArrayAccess
 
 
     /**
-     * Gets subId
+     * Gets agentUserId
      * @return string
      */
-    public function getSubId()
+    public function getAgentUserId()
     {
-        return $this->container['subId'];
+        return $this->container['agentUserId'];
     }
 
     /**
-     * Sets subId
-     * @param string $subId
+     * Sets agentUserId
+     * @param string $agentUserId
      * @return $this
      */
-    public function setSubId($subId)
+    public function setAgentUserId($agentUserId)
     {
-        $this->container['subId'] = $subId;
+        $this->container['agentUserId'] = $agentUserId;
 
         return $this;
     }
 
     /**
-     * Gets subId2
+     * Gets campaignId
      * @return string
      */
-    public function getSubId2()
+    public function getCampaignId()
     {
-        return $this->container['subId2'];
+        return $this->container['campaignId'];
     }
 
     /**
-     * Sets subId2
-     * @param string $subId2
+     * Sets campaignId
+     * @param string $campaignId
      * @return $this
      */
-    public function setSubId2($subId2)
+    public function setCampaignId($campaignId)
     {
-        $this->container['subId2'] = $subId2;
+        $this->container['campaignId'] = $campaignId;
 
         return $this;
     }
 
     /**
-     * Gets subId3
+     * Gets agentId
      * @return string
      */
-    public function getSubId3()
+    public function getAgentId()
     {
-        return $this->container['subId3'];
+        return $this->container['agentId'];
     }
 
     /**
-     * Sets subId3
-     * @param string $subId3
+     * Sets agentId
+     * @param string $agentId
      * @return $this
      */
-    public function setSubId3($subId3)
+    public function setAgentId($agentId)
     {
-        $this->container['subId3'] = $subId3;
-
-        return $this;
-    }
-
-    /**
-     * Gets clickId
-     * @return string
-     */
-    public function getClickId()
-    {
-        return $this->container['clickId'];
-    }
-
-    /**
-     * Sets clickId
-     * @param string $clickId
-     * @return $this
-     */
-    public function setClickId($clickId)
-    {
-        $this->container['clickId'] = $clickId;
+        $this->container['agentId'] = $agentId;
 
         return $this;
     }

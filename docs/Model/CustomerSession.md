@@ -17,7 +17,12 @@ Name | Type | Description | Notes
 **networkId** | **float** |  | [optional] 
 **tid** | **string** |  | [optional] 
 **httpReferer** | **string** |  | [optional] 
+**httpUserAgent** | **string** |  | [optional] 
+**httpAcceptLanguage** | **string** |  | [optional] 
+**queryString** | **string** |  | [optional] 
+**campaign** | [**\Swagger\Client\Model\CustomerSessionCampaign**](CustomerSessionCampaign.md) |  | [optional] 
 **subIds** | [**\Swagger\Client\Model\CustomerSessionSubIds**](CustomerSessionSubIds.md) |  | [optional] 
+**void** | **bool** |  | [optional] [default to false]
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
