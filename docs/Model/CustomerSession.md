@@ -15,14 +15,15 @@ Name | Type | Description | Notes
 **productId** | **float** |  | [optional] 
 **destinationId** | **float** |  | [optional] 
 **networkId** | **float** |  | [optional] 
-**tid** | **string** |  | [optional] 
 **httpReferer** | **string** |  | [optional] 
 **httpUserAgent** | **string** |  | [optional] 
 **httpAcceptLanguage** | **string** |  | [optional] 
 **queryString** | **string** |  | [optional] 
-**campaign** | [**\Swagger\Client\Model\CustomerSessionCampaign**](CustomerSessionCampaign.md) |  | [optional] 
-**subIds** | [**\Swagger\Client\Model\CustomerSessionSubIds**](CustomerSessionSubIds.md) |  | [optional] 
 **void** | **bool** |  | [optional] [default to false]
+**tid** | **string** |  | [optional] 
+**isCPA** | **bool** |  | [optional] [default to false]
+**subIds** | [**\Swagger\Client\Model\CustomerSessionSubIds**](CustomerSessionSubIds.md) |  | [optional] 
+**clickId** | **string** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 
